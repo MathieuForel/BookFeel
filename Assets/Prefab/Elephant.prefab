@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4826113615634251474
+--- !u!1 &9148052236717402311
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5631865327051010089}
-  - component: {fileID: 2100288245607001296}
-  - component: {fileID: 1787213099243989072}
-  - component: {fileID: 1045393024165356934}
+  - component: {fileID: 3026815711388072750}
+  - component: {fileID: 1205548146736492902}
+  - component: {fileID: 6106055083419042573}
+  - component: {fileID: 390066220488153635}
   m_Layer: 0
-  m_Name: corde
+  m_Name: Elephant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5631865327051010089
+--- !u!4 &3026815711388072750
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826113615634251474}
+  m_GameObject: {fileID: 9148052236717402311}
   m_LocalRotation: {x: 0.00000018412032, y: 0.70834714, z: 0.000000046042274, w: 0.70586425}
-  m_LocalPosition: {x: 116.29, y: 13.1, z: -61.34}
-  m_LocalScale: {x: -1.6056997, y: -7.5506396, z: -1.6056997}
+  m_LocalPosition: {x: 60.2, y: 13.1, z: -96.5}
+  m_LocalScale: {x: -0.5270872, y: -5.7297177, z: -0.5270872}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1558677520838628085}
+  - {fileID: 4404240868797916264}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2100288245607001296
+--- !u!33 &1205548146736492902
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826113615634251474}
+  m_GameObject: {fileID: 9148052236717402311}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1787213099243989072
+--- !u!23 &6106055083419042573
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826113615634251474}
+  m_GameObject: {fileID: 9148052236717402311}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1045393024165356934
+--- !u!136 &390066220488153635
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4826113615634251474}
+  m_GameObject: {fileID: 9148052236717402311}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -99,7 +99,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!1 &6305980633925095931
+--- !u!1 &9168729298127103846
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,9 +107,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1558677520838628085}
-  - component: {fileID: 2426535332514172087}
-  - component: {fileID: 3577631451683820957}
+  - component: {fileID: 4404240868797916264}
+  - component: {fileID: 653655580153297450}
+  - component: {fileID: 1808412504933344000}
   m_Layer: 0
   m_Name: Elephant (1)
   m_TagString: Untagged
@@ -117,36 +117,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1558677520838628085
+--- !u!4 &4404240868797916264
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6305980633925095931}
+  m_GameObject: {fileID: 9168729298127103846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2684385, y: 1.0924037, z: 0.003474049}
-  m_LocalScale: {x: -360.8243, y: -76.73195, z: -360.8243}
+  m_LocalPosition: {x: 3.8641257, y: 1.4395728, z: 0.010583219}
+  m_LocalScale: {x: -1099.2026, y: -101.117584, z: -1099.2026}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5631865327051010089}
+  m_Father: {fileID: 3026815711388072750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2426535332514172087
+--- !u!33 &653655580153297450
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6305980633925095931}
+  m_GameObject: {fileID: 9168729298127103846}
   m_Mesh: {fileID: 489826160327453344, guid: 50a203685c8507944a26776b3c186130, type: 3}
---- !u!23 &3577631451683820957
+--- !u!23 &1808412504933344000
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6305980633925095931}
+  m_GameObject: {fileID: 9168729298127103846}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
