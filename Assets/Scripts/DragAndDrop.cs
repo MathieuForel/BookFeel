@@ -70,5 +70,6 @@ public class DragAndDrop : MonoBehaviour
 
         transform.position = atThisPosThenGood;
         Debug.Log("Got the good location");
+        StoryController.Instance.CheckNextAct();
     }
 }
