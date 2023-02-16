@@ -71,6 +71,8 @@ public class DragAndDrop : MonoBehaviour
     {
         if (freezeIfGootTheLocation)
             f = true;
+        rb.velocity = Vector3.zero;
+
         Debug.Log("Got the good location");
     }
 }
