@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryController : MonoBehaviour
+public class StoryController : Singleton<StoryController>
 {
     public int act = 1;
     public GameObject scene1Obj, scene2Obj, scene3Obj, scene4Obj, scene5Obj;
@@ -20,9 +20,9 @@ public class StoryController : MonoBehaviour
     }
     public void CheckNextAct()
     {
+        nbValidatedStep++;
         if (nbPositionNeeded[act -1] != nbValidatedStep)
         {
-            nbValidatedStep++;
             return;
         }
 
