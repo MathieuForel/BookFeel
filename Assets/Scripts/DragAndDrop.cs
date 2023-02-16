@@ -6,12 +6,17 @@ public class DragAndDrop : MonoBehaviour
     private float mZCoord;
     private float ZPos;
 
+    public AudioClip son;
+    public AudioSource audioSource;
+
     private void Start()
     {
         ZPos = transform.position.z;
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnMouseDown()
     {
+        audioSource.PlayOneShot(son);
         if (f) return;
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
@@ -63,6 +68,7 @@ public class DragAndDrop : MonoBehaviour
         if (freezeIfGootTheLocation)
             f = true;
 
+        transform.position = atThisPosThenGood;
         Debug.Log("Got the good location");
     }
 }
