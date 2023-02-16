@@ -21,14 +21,26 @@ public class StoryController : Singleton<StoryController>
     public void CheckNextAct()
     {
         nbValidatedStep++;
-        if (nbPositionNeeded[act -1] != nbValidatedStep)
+    }
+    public void WantNextAct()
+    {
+        if (!CheckIfActIsFinished())
         {
             return;
         }
 
         act++;
         nbValidatedStep = 0;
+
         Next();
+    }
+    public bool CheckIfActIsFinished()
+    {
+        if (nbPositionNeeded[act - 1] == nbValidatedStep)
+        {
+            return true;
+        }
+        else return false;
     }
     public void Next()
     {
