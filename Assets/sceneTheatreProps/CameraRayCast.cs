@@ -12,7 +12,7 @@ public class CameraRayCast : MonoBehaviour
 
     public GameObject Levier;
 
-    public float sec;
+    public bool open;
 
     public void Start()
     {
@@ -21,6 +21,11 @@ public class CameraRayCast : MonoBehaviour
 
     public void Update()
     {
+        if(open == false)
+        {
+            Levier.transform.GetComponent<FishingrodCast>().enabled = false;
+        }
+
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
         if (Physics.Raycast(ray, out hit))
@@ -29,13 +34,15 @@ public class CameraRayCast : MonoBehaviour
             {
                 hit.transform.GetComponent<FishingrodCast>().enabled = true;
             }
+
+            if (hit.transform.GetComponent<FishingrodCast>().IsFishingrodBackward == true && hit.transform.GetComponent<FishingrodCast>().IsFishingrodForward == false)
+            {
+                open = true;
+            }
             else
             {
-                Levier.transform.GetComponent<FishingrodCast>().enabled = false;
+                open = false;
             }
-
-
         }
-
     }
 }
