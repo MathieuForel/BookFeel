@@ -46,7 +46,7 @@ public class FishingrodCast : MonoBehaviour
             _Left.GetComponent<Move>().A = true;
             _Right.GetComponent<Move>().A = true;
             Multiplicator = 0;
-            FishingrodDistance += 11 * FirstTime * Time.deltaTime;
+            FishingrodDistance += 9 * FirstTime * Time.deltaTime;
             Casting();
 
             if(FirstCheck == false)
