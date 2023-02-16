@@ -781,12 +781,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FishingrodVelocity: 1
-  FishingrodSpeed: -100
+  FishingrodSpeed: 100
   FishingrodDistance: 0
   FishingrodMaxDistance: 50
+  Multiplicator: 0
   IsFishingrodBackward: 0
   IsFishingrodForward: 0
-  FishingrodRotation: -10
+  FishingrodRotation: 10
   _Left: {fileID: 682412447}
   _Right: {fileID: 787750894}
   _PivotPoint: {fileID: 244999983}

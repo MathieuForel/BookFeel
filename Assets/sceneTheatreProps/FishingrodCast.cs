@@ -8,6 +8,7 @@ public class FishingrodCast : MonoBehaviour
     public float FishingrodSpeed;
     public float FishingrodDistance;
     public float FishingrodMaxDistance;
+    public float Multiplicator;
     public bool IsFishingrodBackward;
     public bool IsFishingrodForward;
 
@@ -29,11 +30,37 @@ public class FishingrodCast : MonoBehaviour
         {
             Casting();
         }
+        
+        if(IsFishingrodBackward == true && IsFishingrodForward == false)
+        {
+            _Left.GetComponent<Move>().A = true;
+            _Right.GetComponent<Move>().A = true;
+            Multiplicator = 0;
+            FishingrodDistance += 22 * Time.deltaTime;
+            Casting();
+        }else
+        {
+            Multiplicator = 1000;
+            _Left.GetComponent<Move>().A = false;
+            _Right.GetComponent<Move>().A = false;
+        }
+
+        
+        if (FishingrodDistance >= FishingrodMaxDistance / 2 && IsFishingrodBackward == true)
+        {
+            IsFishingrodForward = true;
+        }
+
+
+        if (IsFishingrodForward == true)
+        {
+            _PivotPoint.transform.rotation = Quaternion.Euler(Mathf.Clamp(FishingrodRotation * FishingrodDistance, -15, 15), 0, 0);
+        }
     }
 
     public void Casting()
     {
-        FishingrodVelocity = (Input.GetAxis("Vertical") * 1000) / (Screen.width * Screen.height);
+        FishingrodVelocity = (Input.GetAxis("Vertical") * Multiplicator) / (Screen.width * Screen.height);
 
         FishingrodDistance += FishingrodVelocity * FishingrodSpeed;
         FishingrodDistance = Mathf.Clamp(FishingrodDistance, -FishingrodMaxDistance, FishingrodMaxDistance);
@@ -50,25 +77,17 @@ public class FishingrodCast : MonoBehaviour
             {
                 IsFishingrodBackward = true;
             }
-
-            _Left.GetComponent<Move>().A = false;
-            _Right.GetComponent<Move>().A = false;
         }
-
+        
         if(FishingrodDistance >= FishingrodMaxDistance/2 && IsFishingrodBackward == true)
         {
             IsFishingrodForward = true;
-            _Left.GetComponent<Move>().A = true;
-            _Right.GetComponent<Move>().A = true;
 
-            FishingrodVelocity -= 2;
         }
 
         if(IsFishingrodForward == true) 
         {
             _PivotPoint.transform.rotation = Quaternion.Euler(Mathf.Clamp(FishingrodRotation * FishingrodDistance, -15, 15), 0, 0);
-            _Left.GetComponent<Move>().A = false;
-            _Right.GetComponent<Move>().A = false;
         }
     }
 }
