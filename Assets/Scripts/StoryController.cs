@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoryController : Singleton<StoryController>
 {
     public int act = 1;
-    public GameObject scene1Obj, scene2Obj, scene3Obj, scene4Obj, scene5Obj;
+    public GameObject scene1Obj, scene2Obj, scene3Obj, scene4Obj, scene5Obj, sceneFin;
     public List<int> nbPositionNeeded;
     public int nbValidatedStep = 0;
 
@@ -71,6 +71,10 @@ public class StoryController : Singleton<StoryController>
                 scene5Obj.SetActive(true);
                 break;
 
+            case 6:
+                scene5Obj.SetActive(false);
+                sceneFin.SetActive(true);
+                break;
 
             default:
                 break;
