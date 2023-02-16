@@ -11,6 +11,8 @@ public class FishingrodCast : MonoBehaviour
     public float Multiplicator;
     public bool IsFishingrodBackward;
     public bool IsFishingrodForward;
+    public bool FirstCheck;
+    public bool ActCheck;
 
     public float FishingrodRotation;
 
@@ -30,7 +32,15 @@ public class FishingrodCast : MonoBehaviour
         {
             Casting();
         }
-        
+
+        if (StoryController.Instance.CheckIfActIsFinished() && ActCheck == false)
+        {
+            IsFishingrodForward = false;
+            IsFishingrodBackward = false;
+            FirstCheck = false;
+            ActCheck = true;
+        }
+
         if(IsFishingrodBackward == true && IsFishingrodForward == false)
         {
             _Left.GetComponent<Move>().A = true;
@@ -38,7 +48,15 @@ public class FishingrodCast : MonoBehaviour
             Multiplicator = 0;
             FishingrodDistance += 22 * Time.deltaTime;
             Casting();
-        }else
+
+            if(FirstCheck == false)
+            {
+                StoryController.Instance.WantNextAct();
+                    FirstCheck = true;
+            }
+
+        }
+        else
         {
             Multiplicator = 1000;
             _Left.GetComponent<Move>().A = false;
@@ -55,6 +73,7 @@ public class FishingrodCast : MonoBehaviour
         if (IsFishingrodForward == true)
         {
             _PivotPoint.transform.rotation = Quaternion.Euler(Mathf.Clamp(FishingrodRotation * FishingrodDistance, -15, 15), 0, 0);
+            ActCheck = false;
         }
     }
 
@@ -88,6 +107,7 @@ public class FishingrodCast : MonoBehaviour
         if(IsFishingrodForward == true) 
         {
             _PivotPoint.transform.rotation = Quaternion.Euler(Mathf.Clamp(FishingrodRotation * FishingrodDistance, -15, 15), 0, 0);
+            FishingrodDistance = Mathf.Clamp(FishingrodDistance, -5, 5);
         }
     }
 }

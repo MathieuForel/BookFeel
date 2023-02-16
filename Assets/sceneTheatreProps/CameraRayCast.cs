@@ -35,14 +35,21 @@ public class CameraRayCast : MonoBehaviour
                 hit.transform.GetComponent<FishingrodCast>().enabled = true;
             }
 
-            if (hit.transform.GetComponent<FishingrodCast>().IsFishingrodBackward == true && hit.transform.GetComponent<FishingrodCast>().IsFishingrodForward == false)
+            try
             {
-                open = true;
-            }
-            else
+                if (hit.transform.GetComponent<FishingrodCast>().IsFishingrodBackward == true && hit.transform.GetComponent<FishingrodCast>().IsFishingrodForward == false)
+                {
+                    open = true;
+                }
+                else
+                {
+                    open = false;
+                }
+            }catch (NullReferenceException)
             {
-                open = false;
+
             }
+
         }
     }
 }
