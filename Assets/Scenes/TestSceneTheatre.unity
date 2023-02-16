@@ -797,7 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FishingrodVelocity: 1
-  FishingrodSpeed: 100
+  FishingrodSpeed: 500
   FishingrodDistance: 0
   FishingrodMaxDistance: 50
   Multiplicator: 0
