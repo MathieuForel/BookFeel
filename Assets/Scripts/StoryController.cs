@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryController : Singleton<StoryController>
 {
@@ -74,10 +75,18 @@ public class StoryController : Singleton<StoryController>
             case 6:
                 scene5Obj.SetActive(false);
                 sceneFin.SetActive(true);
+
+                StartCoroutine(EEE());
                 break;
 
             default:
                 break;
         }
+    }
+    IEnumerator EEE()
+    {
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene(0);
     }
 }
