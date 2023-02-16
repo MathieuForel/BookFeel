@@ -13,7 +13,6 @@ public class FishingrodCast : MonoBehaviour
     public bool IsFishingrodForward;
     public bool FirstCheck;
     public bool ActCheck;
-    public float FirstTime;
     public float FishingrodRotation;
 
     public GameObject _Left;
@@ -28,6 +27,8 @@ public class FishingrodCast : MonoBehaviour
 
     public void FixedUpdate()
     {
+        Multiplicator = 1000;
+
         if (Input.GetMouseButton(0))
         {
             Casting();
@@ -46,7 +47,7 @@ public class FishingrodCast : MonoBehaviour
             _Left.GetComponent<Move>().A = true;
             _Right.GetComponent<Move>().A = true;
             Multiplicator = 0;
-            FishingrodDistance += 9 * FirstTime * Time.deltaTime;
+            FishingrodDistance += 22 * Time.deltaTime;
             Casting();
 
             if(FirstCheck == false)
@@ -54,14 +55,8 @@ public class FishingrodCast : MonoBehaviour
                 StoryController.Instance.WantNextAct();
                     FirstCheck = true;
             }
+        }
 
-        }
-        else
-        {
-            Multiplicator = 1000;
-            _Left.GetComponent<Move>().A = false;
-            _Right.GetComponent<Move>().A = false;
-        }
 
         
         if (FishingrodDistance >= FishingrodMaxDistance / 2 && IsFishingrodBackward == true)
@@ -74,7 +69,6 @@ public class FishingrodCast : MonoBehaviour
         {
             _PivotPoint.transform.rotation = Quaternion.Euler(Mathf.Clamp(FishingrodRotation * FishingrodDistance, -15, 15), 0, 0);
             ActCheck = false;
-            FirstTime = 1f;
         }
     }
 

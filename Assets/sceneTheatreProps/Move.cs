@@ -31,7 +31,7 @@ public class Move : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vectorx.Set(distance + NPos, 0, 0);
         gameObject.transform.position = Vectorx;
@@ -56,13 +56,19 @@ public class Move : MonoBehaviour
             fif = fif - (float)1 * Time.deltaTime;
         }
         
+        if(NPos >= 55 || NPos <= -55)
+        {
+            A = false;
+        }
+
+
         growth = Mathf.Cos(fif) * 32;
         NPos = growth * lft + 30 * lft;
 
         if (growth <= -35)
         {
             fif = -3;
-            A = false;
+            //A = false;
             growth = (float)-34.9;
         }
     }
