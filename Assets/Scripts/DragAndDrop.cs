@@ -5,25 +5,16 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
     private float ZPos;
-    Rigidbody rb;
 
     private void Start()
     {
         ZPos = transform.position.z;
-        rb = GetComponent<Rigidbody>();
     }
     private void OnMouseDown()
     {
         if (f) return;
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
-        rb.useGravity = false;
-    }
-    private void OnMouseUp()
-    {
-        if(f) return;
-        rb.useGravity = true;
-        rb.velocity= Vector3.zero;
     }
 
     private Vector3 GetMouseAsWorldPoint()
@@ -71,7 +62,6 @@ public class DragAndDrop : MonoBehaviour
     {
         if (freezeIfGootTheLocation)
             f = true;
-        rb.velocity = Vector3.zero;
 
         Debug.Log("Got the good location");
     }
